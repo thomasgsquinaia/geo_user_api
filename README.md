@@ -88,7 +88,7 @@ DELETE /regions/:id - Deleta uma região específica - {id}.
 ### Caso deseje entre nesse link para ver a documentação: 
 
 ```markdown
-https://https://github.com/thomasgsquinaia/geo_user_api.git/docs
+https://geo-user-api.onrender.com/docs
 ```
 
 <p align="center">
