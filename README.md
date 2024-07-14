@@ -109,7 +109,7 @@ npm run test:all
 
 ## Insomnia
 
-Se você optar por fazer as solicitações usando o Insomnia, pode importar todas as coleções de solicitações a partir do arquivo `insomnia_ozmap.json` localizado na raiz do projeto. 
+Se você optar por fazer as solicitações usando o Insomnia, pode importar todas as coleções de solicitações a partir do arquivo `insomnia_geo_user_api.json` localizado na raiz do projeto. 
 
 ## Sobre
 
