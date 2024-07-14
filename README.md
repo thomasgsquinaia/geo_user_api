@@ -92,7 +92,8 @@ https://https://github.com/thomasgsquinaia/geo_user_api.git/docs
 ```
 
 <p align="center">
-    <img src="./.github/img/docs-api.png" alt="docs-api" width="1200px">
+    <img src="./.github/img/swagger-geo-user-doc1.jpeg.png" alt="swagger-geo-user-doc1" width="1200px">
+    <img src="./.github/img/swagger-geo-user-doc2.jpeg.png" alt="swagger-geo-user-doc2" width="1200px">
 </p>
 
 ## Testes
