@@ -16,7 +16,7 @@ Este projeto foi construido com **NodeJs, TypeScript, Express.js, MongoDB, Docke
 1. Clonar o repositório:
 
 ```bash
-git clone https://github.com/thomasgsquinaia/ozmap-technical-assessment-int_dm.git
+git clone https://github.com/thomasgsquinaia/geo_user_api.git
 ```
 
 2. Ir para a branch "thomasquinaia":
@@ -88,7 +88,7 @@ DELETE /regions/:id - Deleta uma região específica - {id}.
 ### Caso deseje entre nesse link para ver a documentação: 
 
 ```markdown
-https://ozmap-technical-assessment-int-dm.onrender.com/docs
+https://https://github.com/thomasgsquinaia/geo_user_api.git/docs
 ```
 
 <p align="center">
