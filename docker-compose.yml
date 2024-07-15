@@ -3,7 +3,7 @@ services:
   api:
     build: .
     ports:
-      - 3002:3002
+      - 3001:3001
     environment:
       ME_CONFIG_BASICAUTH_USERNAME: ozmap
       ME_CONFIG_BASICAUTH_PASSWORD: MongoExpress2019!
