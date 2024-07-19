@@ -1,6 +1,7 @@
 import axios from "axios";
 import dotenv from 'dotenv'; 
 dotenv.config();
+//openstreetmap
 const API_KEY = process.env.GOOGLE_API_KEY;
 const GOOGLE_GEOCODING_REVERSE_API_URL = process.env.GOOGLE_GEOCODING_REVERSE_API_URL;
 const GOOGLE_GEOCODING_API_URL = process.env.GOOGLE_GEOCODING_API_URL;
