@@ -59,7 +59,7 @@ export async function createUsers(input : UserRequestBody) {
             const { lat, lng } = await geoLib.getCoordinatesFromAddress(address.zipCode);
             const formatedAddress = formatAddress(address);
 
-            newUser.coordinates = [lng, lat];
+            newUser.coordinates = [lat, lng];
             newUser.address = formatedAddress;
         }
 
