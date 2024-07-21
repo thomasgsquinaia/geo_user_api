@@ -7,7 +7,7 @@ class GeoLib {
     const response = await axios.get(GeoLib.NOMINATIM_REVERSE_API_URL, {
       params: {
         lat: coordinates.lat,
-        lon: coordinates.lng,
+        lng: coordinates.lng,
         format: 'json'
       }
     });
@@ -43,7 +43,7 @@ class GeoLib {
 
     return {
       lat: parseFloat(response.data[0].lat),
-      lng: parseFloat(response.data[0].lon)
+      lng: parseFloat(response.data[0].lng)
     };
   }
 }
