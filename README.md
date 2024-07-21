@@ -21,19 +21,13 @@ Este projeto foi construido com **NodeJs, TypeScript, Express.js, MongoDB, Docke
 git clone https://github.com/thomasgsquinaia/geo_user_api.git
 ```
 
-2. Ir para a branch "thomasquinaia":
-
-```bash
-git switch thomasquinaia
-```
-
-3. Instalar as dependências: 
+2. Instalar as dependências: 
 
 ```bash
 npm install
 ```
 
-4. Crie um arquivo .env contendo as mesmas variáveis de ambiente presentes no arquivo .env.example, segue o exemplo abaixo:
+3. Crie um arquivo .env contendo as mesmas variáveis de ambiente presentes no arquivo .env.example, segue o exemplo abaixo:
 
 ```markdown
 API_PORT=3001
@@ -44,25 +38,25 @@ DB_USER="root"
 DB_PASS="MongoDB2019!"
 ```
 
-6. Verifique se há algum container em execução e, se necessário, execute o seguinte comando para pará-los:
+4. Verifique se há algum container em execução e, se necessário, execute o seguinte comando para pará-los:
 
 ```bash
 docker-compose down --remove-orphans
 ```
 
-7. Digite o comando abaixo para iniciar o projeto: 
+5. Digite o comando abaixo para iniciar o projeto: 
 
 ```bash
 docker-compose up --build
 ```
 
-8. Aguarde até que os contêineres estejam prontos para uso.
+6. Aguarde até que os contêineres estejam prontos para uso.
 
 
 ## API Endpoints
 A API fornece os seguintes endpoints:
 
-**API USUÁRIOS**
+**USUÁRIOS**
 ```markdown
 GET /users - Lista usuários cadastrados.
 GET /users/:id - Lista um usuário específico cadastrado - {id}. 
@@ -71,7 +65,7 @@ PUT /users/:id - Atualiza um usuário - {name, email, address, coordinates}.
 DELETE /users/:id - Deleta um usuário específico - {id}.
 ```
 
-**API REGIÕES**
+**REGIÕES**
 ```markdown
 GET /regions - Lista regiões cadastradas.
 GET /regions/:id - Lista uma região específica cadastrada.
@@ -97,7 +91,7 @@ https://geo-user-api.onrender.com/docs
 
 ## Testes
 
-Rode os testes com esse comando: 
+Para rodar os testes, execute o seguinte comando:
 
 ```bash
 npm run test:all
