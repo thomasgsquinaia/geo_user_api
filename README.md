@@ -39,10 +39,7 @@ npm install
 API_PORT=3001
 DB_PORT=27017
 MONGODB_URI="mongodb+srv://root:root@clusterozmap.q6natw5.mongodb.net/"
-GOOGLE_API_KEY="YOUR_API_KEY"
-GOOGLE_GEOCODING_REVERSE_API_URL="https://maps.googleapis.com/maps/api/geocode/json?latlng="
-GOOGLE_GEOCODING_API_URL="https://maps.googleapis.com/maps/api/geocode/json?address="
-DB_NAME="oz-tech-test"
+DB_NAME="geo_user_api"
 DB_USER="root"
 DB_PASS="MongoDB2019!"
 ```
@@ -112,7 +109,7 @@ npm run test:all
 
 ## Insomnia
 
-Se você optar por fazer as solicitações usando o Insomnia, pode importar todas as coleções de solicitações a partir do arquivo `insomnia_geo_user_api.json` localizado na raiz do projeto. 
+Caso opte por fazer as solicitações utilizando o Insomnia, é possível importar todas as coleções de solicitações a partir do arquivo `insomnia_geo_user_api.json`, localizado na raiz do projeto. 
 
 ## Sobre
 

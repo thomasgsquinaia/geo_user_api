@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 class GeoLib {
   private static NOMINATIM_REVERSE_API_URL = 'https://nominatim.openstreetmap.org/reverse';
   private static NOMINATIM_SEARCH_API_URL = 'https://nominatim.openstreetmap.org/search';
