@@ -17,8 +17,8 @@ const input_schema = Joi.object({
     country: Joi.string().required()
   }).label("address").optional(),
   coordinates: Joi.object({
-    lng: Joi.number().optional(),
     lat: Joi.number().optional(),
+    lng: Joi.number().optional(),
   }).label("coordinates").optional(),
 })
 .oxor('address', 'coordinates')
