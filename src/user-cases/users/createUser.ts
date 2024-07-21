@@ -17,8 +17,8 @@ const input_schema = Joi.object({
     country: Joi.string().required()
   }).label("address").optional(),
   coordinates: Joi.object({
-    lat: Joi.number().optional(),
     lng: Joi.number().optional(),
+    lat: Joi.number().optional(),
   }).label("coordinates").optional(),
 })
 .oxor('address', 'coordinates')
@@ -59,7 +59,7 @@ export async function createUsers(input : UserRequestBody) {
             const { lat, lng } = await geoLib.getCoordinatesFromAddress(address.zipCode);
             const formatedAddress = formatAddress(address);
 
-            newUser.coordinates = [lat, lng];
+            newUser.coordinates = [lng, lat];
             newUser.address = formatedAddress;
         }
 
