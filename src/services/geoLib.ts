@@ -1,50 +1,52 @@
-import axios from "axios";
-import dotenv from 'dotenv'; 
-dotenv.config();
-//openstreetmap
-const API_KEY = process.env.GOOGLE_API_KEY;
-const GOOGLE_GEOCODING_REVERSE_API_URL = process.env.GOOGLE_GEOCODING_REVERSE_API_URL;
-const GOOGLE_GEOCODING_API_URL = process.env.GOOGLE_GEOCODING_API_URL;
+import axios from 'axios';
+
 class GeoLib {
-    public async getAddressFromCoordinates(coordinates: { lat: number; lng: number }): Promise<string> {
-      const response = await axios.get(`${GOOGLE_GEOCODING_REVERSE_API_URL}${coordinates.lat},${coordinates.lng}&key=${API_KEY}`)
+  private static NOMINATIM_REVERSE_API_URL = 'https://nominatim.openstreetmap.org/reverse';
+  private static NOMINATIM_SEARCH_API_URL = 'https://nominatim.openstreetmap.org/search';
 
-      if (response.statusText !==  "OK") {
-        throw ({
-          message: "Invalid Geocoding API response!",
-          statusCode: 400,
-        });
+  public async getAddressFromCoordinates(coordinates: { lat: number; lng: number }): Promise<string> {
+    const response = await axios.get(GeoLib.NOMINATIM_REVERSE_API_URL, {
+      params: {
+        lat: coordinates.lat,
+        lon: coordinates.lng,
+        format: 'json'
       }
-  
-      if (!response.data.results.length) {
-        throw ({
-          message: 'No address was found with the given coordinates!',
-          statusCode: 404,
-        });
-      }
+    });
 
-      return response.data.results[0].formatted_address;
-    };
-  
-    public async getCoordinatesFromAddress(zipCode: string): Promise<{ lat: number; lng: number }> {
-      const response = await axios.get(`${GOOGLE_GEOCODING_API_URL}${zipCode}&key=${API_KEY}`);
+    if (response.status !== 200) {
+      throw new Error('Invalid Geocoding API response!');
+    }
 
-      if (response.statusText !== 'OK') {
-        throw ({
-          message: 'Invalid Geocoding API response!',
-          statusCode: 400
-        });
+    if (!response.data.address) {
+      throw new Error('No address was found with the given coordinates!');
+    }
+
+    return response.data.display_name;
+  }
+
+  public async getCoordinatesFromAddress(address: string): Promise<{ lat: number; lng: number }> {
+    const response = await axios.get(GeoLib.NOMINATIM_SEARCH_API_URL, {
+      params: {
+        q: address,
+        format: 'json',
+        addressdetails: 1,
+        limit: 1
       }
-  
-      if (!response.data.results.length) {
-        throw ({
-          message: 'No address was found with the given CEP!',
-          statusCode: 404
-        });
-      }
-  
-      return response.data.results[0].geometry.location;
+    });
+
+    if (response.status !== 200) {
+      throw new Error('Invalid Geocoding API response!');
+    }
+
+    if (!response.data.length) {
+      throw new Error('No coordinates were found with the given address!');
+    }
+
+    return {
+      lat: parseFloat(response.data[0].lat),
+      lng: parseFloat(response.data[0].lon)
     };
   }
-  
+}
+
 export default new GeoLib();
