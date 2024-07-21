@@ -44,13 +44,13 @@ DB_USER="root"
 DB_PASS="MongoDB2019!"
 ```
 
-6. Verifique se tem algum container rodando e rode isso para parar a execução dele: 
+6. Verifique se há algum container em execução e, se necessário, execute o seguinte comando para pará-los:
 
 ```bash
 docker-compose down --remove-orphans
 ```
 
-7. Rode o projeto com o comando: 
+7. Digite o comando abaixo para iniciar o projeto: 
 
 ```bash
 docker-compose up --build
